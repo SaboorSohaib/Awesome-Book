@@ -58,7 +58,11 @@ const titleBookOne = document.querySelector('.books-title');
 
 // Luxon Date
 const showDate = document.querySelector('.our-date');
-showDate.innerHTML = DateTime.now();
+const updateTime = () => {
+  const now = DateTime.now();
+  showDate.innerHTML = now.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+};
+setInterval(updateTime, 1000);
 
 // Single page Part
 listLink.addEventListener('click', (e) => {
