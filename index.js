@@ -81,7 +81,6 @@ const addNewLink = document.querySelector('.add-new');
 
 const titleBookOne = document.querySelector('.books-title');
 
-
 // Date and Time
 const showDate = document.querySelector('.our-date');
 const date = new Date();
