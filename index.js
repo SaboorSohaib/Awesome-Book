@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
+
 import { Book } from './modules/book-class.js';
 import { clearFields } from './modules/clearFields.js';
 import { createListOfBooks } from './modules/showBooks.js';
 import { DateTime } from './modules/luxon.min.js';
+
 
 if (localStorage.getItem('My Books') === null) {
   localStorage.setItem('My Books', JSON.stringify([]));
 }
 
 const Localstoragebook = JSON.parse(localStorage.getItem('My Books'));
+
 
 const updateLocalStorage = () => {
   localStorage.setItem('My Books', JSON.stringify(Localstoragebook));
@@ -23,6 +26,46 @@ const showBooks = () => {
 };
 
 const addNewBook = (bookTitle, bookAuthor) => {
+
+function updateLocalStorage() {
+  localStorage.setItem('My Books', JSON.stringify(Localstoragebook));
+}
+
+function createListOfBooks(arr) {
+  let books = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    let liClass = 'dark-bakcground';
+    if (i % 2 === 0) {
+      liClass = 'book-li';
+    }
+    books += `
+              <li class= '${liClass}'>${arr[i].title} by ${arr[i].author} <button onclick="removeBook(${i})">Remove</button></li> <br />
+              `;
+  }
+  return books;
+}
+
+function showBooks() {
+  const listOfBooks = document.querySelector('.container');
+  listOfBooks.innerHTML = `
+                <ul class="book-ul"/>
+                ${createListOfBooks(Localstoragebook)}</ul>
+            `;
+}
+
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
+function clearFields() {
+  document.querySelector('.book-title').value = '';
+  document.querySelector('.author-name').value = '';
+}
+
+function addNewBook(bookTitle, bookAuthor) {
   const myBook = new Book(bookTitle, bookAuthor);
   Localstoragebook.push(myBook);
   updateLocalStorage();
@@ -31,7 +74,7 @@ const addNewBook = (bookTitle, bookAuthor) => {
 };
 
 const removeBook = (i) => {
-  Localstoragebook.splice(i, 1);
+ Localstoragebook.splice(i, 1);
   updateLocalStorage();
   showBooks();
   clearFields();
@@ -48,12 +91,21 @@ form.addEventListener('submit', (e) => {
 window.onload = showBooks();
 
 // ======== NAVIGATIONS =================
+
 const contactLink = document.querySelector('.contact-us');
 const listOfBooks = document.querySelector('.container');
+
+
+const contactLink = document.querySelector('.contact-us');
+
+const listOfBooks = document.querySelector('.container');
+
+
 const booksection = document.querySelector('.add-book');
 const listLink = document.querySelector('.list');
 const contactSection = document.querySelector('.contact');
 const addNewLink = document.querySelector('.add-new');
+
 const titleBookOne = document.querySelector('.books-title');
 
 // ==== Luxon Date ====
@@ -65,6 +117,18 @@ const updateTime = () => {
 setInterval(updateTime, 1000);
 
 // Single page Part
+
+
+const titleBookOne = document.querySelector('.books-title');
+
+// Date and Time
+const showDate = document.querySelector('.our-date');
+const date = new Date();
+const currentDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+const currenttime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+showDate.innerHTML = `${currentDate.toString()} ${currenttime}`;
+
+
 listLink.addEventListener('click', (e) => {
   e.preventDefault();
   titleBookOne.style.display = 'block';
