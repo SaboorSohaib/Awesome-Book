@@ -25,8 +25,6 @@ function createListOfBooks(arr) {
 
 function showBooks() {
   const listOfBooks = document.querySelector('.container');
-  // listOfBooks.creatElement('h2');
-  // listOfBooks.innerText = 'All Awesome Books';
   listOfBooks.innerHTML = `
                 <ul class="book-ul"/>
                 ${createListOfBooks(Localstoragebook)}</ul>
@@ -73,16 +71,16 @@ window.onload = showBooks();
 // ======== NAVIGATIONS =================
 
 const contactLink = document.querySelector('.contact-us');
-// console.log(contactLink);
+
 const listOfBooks = document.querySelector('.container');
-// console.log(listOfBooks);
+
 const booksection = document.querySelector('.add-book');
 const listLink = document.querySelector('.list');
 const contactSection = document.querySelector('.contact');
 const addNewLink = document.querySelector('.add-new');
-// console.log(addNewLink);
+
 const titleBookOne = document.querySelector('.books-title');
-// console.log(titleBook);
+
 
 // Date and Time
 const showDate = document.querySelector('.our-date');
