@@ -61,6 +61,7 @@ We use Linters for HTML/CSS to cheack this project.
 ## Authors
 
 
+
 👤 **Abdul Saboor**
 
 - GitHub: [@SaboorSohaib](https://github.com/SaboorSohaib)
@@ -78,4 +79,7 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
+
 This project is [MIT](./LICENSE) licensed.
+
+
