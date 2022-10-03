@@ -56,7 +56,7 @@ const contactSection = document.querySelector('.contact');
 const addNewLink = document.querySelector('.add-new');
 const titleBookOne = document.querySelector('.books-title');
 
-// Luxon Date
+// ==== Luxon Date ====
 const showDate = document.querySelector('.our-date');
 const updateTime = () => {
   const now = DateTime.now();
