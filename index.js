@@ -1,62 +1,40 @@
 /* eslint-disable no-unused-vars */
+import { Book } from './modules/book-class.js';
+import { clearFields } from './modules/clearFields.js';
+import { createListOfBooks } from './modules/showBooks.js';
+
 if (localStorage.getItem('My Books') === null) {
   localStorage.setItem('My Books', JSON.stringify([]));
 }
 
 const Localstoragebook = JSON.parse(localStorage.getItem('My Books'));
 
-function updateLocalStorage() {
+const updateLocalStorage = () => {
   localStorage.setItem('My Books', JSON.stringify(Localstoragebook));
-}
+};
 
-function createListOfBooks(arr) {
-  let books = '';
-  for (let i = 0; i < arr.length; i += 1) {
-    let liClass = 'dark-bakcground';
-    if (i % 2 === 0) {
-      liClass = 'book-li';
-    }
-    books += `
-                <li class= '${liClass}'>${arr[i].title} by ${arr[i].author} <button onclick="removeBook(${i})">Remove</button></li> <br />
-                `;
-  }
-  return books;
-}
-
-function showBooks() {
+const showBooks = () => {
   const listOfBooks = document.querySelector('.container');
   listOfBooks.innerHTML = `
                   <ul class="book-ul"/>
                   ${createListOfBooks(Localstoragebook)}</ul>
               `;
-}
+};
 
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
-
-function clearFields() {
-  document.querySelector('.book-title').value = '';
-  document.querySelector('.author-name').value = '';
-}
-
-function addNewBook(bookTitle, bookAuthor) {
+const addNewBook = (bookTitle, bookAuthor) => {
   const myBook = new Book(bookTitle, bookAuthor);
   Localstoragebook.push(myBook);
   updateLocalStorage();
   showBooks();
   clearFields();
-}
+};
 
-function removeBook(i) {
+const removeBook = (i) => {
   Localstoragebook.splice(i, 1);
   updateLocalStorage();
   showBooks();
   clearFields();
-}
+};
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
