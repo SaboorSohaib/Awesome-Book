@@ -18,9 +18,9 @@ const updateLocalStorage = () => {
 const showBooks = () => {
   const listOfBooks = document.querySelector('.container');
   listOfBooks.innerHTML = `
-                  <ul class="book-ul"/>
-                  ${createListOfBooks(Localstoragebook)}</ul>
-              `;
+                <ul class="book-ul"/>
+                ${createListOfBooks(Localstoragebook)}</ul>
+            `;
 };
 
 const addNewBook = (bookTitle, bookAuthor) => {
