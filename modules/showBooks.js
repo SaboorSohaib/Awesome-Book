@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/prefer-default-export
-export const createListOfBooks = (arr) => {
+/* eslint-disable import/prefer-default-export */
+export function createListOfBooks(arr) {
   let books = '';
   for (let i = 0; i < arr.length; i += 1) {
     let liClass = 'dark-bakcground';
@@ -7,8 +7,8 @@ export const createListOfBooks = (arr) => {
       liClass = 'book-li';
     }
     books += `
-                <li class= '${liClass}'>${arr[i].title} by ${arr[i].author} <button onclick="removeBook(${i})">Remove</button></li> <br />
-                `;
+                  <li class= '${liClass}'>${arr[i].title} by ${arr[i].author} <button class="remove-btn" onclick="removeBook(${i})">Remove</button></li> <br />
+                  `;
   }
   return books;
-};
+}
