@@ -60,11 +60,9 @@ We use Linters for HTML/CSS to cheack this project.
 
 ## Authors
 
-👤 **Mostafa Shahat** 
-👤 **Abdul Saboor**
 
-- GitHub: [@MostafaShahat2021](https://github.com/MostafaShahat2021)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mostafa-shahat-a75810208/)
+
+👤 **Abdul Saboor**
 
 - GitHub: [@SaboorSohaib](https://github.com/SaboorSohaib)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdul-saboor-sohaib-b5b566244/)
@@ -81,4 +79,7 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
+
 This project is [MIT](./LICENSE) licensed.
+
+
